@@ -49,6 +49,7 @@ public class MainActivity extends AppCompatActivity {
                 }
             }
         }
+        isFull(v);
     }
 
     public void resetGame(View view){  //function to reset the game
@@ -66,6 +67,19 @@ public class MainActivity extends AppCompatActivity {
         ((ImageView)findViewById(R.id.imageView20)).setImageResource(0);
         ((ImageView)findViewById(R.id.imageView21)).setImageResource(0);
         ((ImageView)findViewById(R.id.imageView22)).setImageResource(0);
+    }
+    
+    public void isFull(View view){
+        short c =0;
+        for(short i= 0 ; i<9 ; i++){
+            if(arr[i] == 2){
+                c++;
+                break;
+            }
+        }
+        if(c == 0){
+            resetGame(view);
+        }
     }
 
     @Override
